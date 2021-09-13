@@ -1,4 +1,4 @@
-auto-ls() {
+auto_ls() {
 	emulate -L zsh
 	echo
   if command -v colorls &>/dev/null; then
@@ -10,6 +10,6 @@ auto-ls() {
 
 # Check if auto-ls has already been added to the chpwd_functions array. This
 # ensures that resourcing the zshrc file doesnt cause ls to be run twice.
-if [[ ! " ${array[*]} " =~ " ${value} " ]]; then
-  chpwd_functions=(auto-ls $chpwd_functions)
+if [[ ! " ${chpwd_functions[*]} " =~ "auto_ls" ]]; then
+  chpwd_functions=(auto_ls $chpwd_functions)
 fi
