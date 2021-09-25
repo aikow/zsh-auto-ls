@@ -4,7 +4,7 @@ auto_ls() {
   if command -v colorls &>/dev/null; then
     colorls -A --group-directories-first
   else
-    ls -AG
+    ls -AG --color=always
   fi
 }
 
